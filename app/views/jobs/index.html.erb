@@ -1,0 +1,33 @@
+<div class="pull-right">
+<%= link_to("新增工作", new_job_path, :class => "btn btn-default btn-danger") %>
+</div>
+
+<br>
+<br>
+
+<table class="table table-bordered table-striped table-hover  ">
+     <thead>
+     	<tr>
+     		<th>工作名称</th>
+     		<th>操作</th>
+     		<th>创建时间</th>
+     	</tr>
+     </thead>
+    <% @jobs.each do |job| %>
+     <tbody>
+     	<tr>
+     	<td>
+      <%= link_to(job.title, job_path(job)) %>
+      </td>
+       <td>
+      <%= link_to("编辑", edit_job_path(job)) %> |
+      <%= link_to("删除", job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+       <td>
+      <%= job.created_at %>
+       </td>
+     	</tr>
+     </tbody>
+  <% end %>
+</table>
+	
