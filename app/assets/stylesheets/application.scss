@@ -16,3 +16,43 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+/* 导航栏*/
+
+ .navbar-default {
+    background-color: #3d3d3d;
+    border: none;
+    border-radius: 0;
+    color: #717171; /*字体颜色*/
+}
+
+.navbar-default .navbar-brand {
+    color: #f2eded;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+    height: 50px;
+}
+
+
+a {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #f2eded;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #8b8787;
+    background-color: transparent;
+}
+
+.navbar {
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
