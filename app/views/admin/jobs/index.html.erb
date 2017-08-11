@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="pull-right">
+    <%= link_to("新增工作", new_admin_job_path, :class => "btn btn-primary btn-green") %>
+  </div>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    	<tr>
+    		<th>工作名称</th>
+    		<th>操作</th>
+    		<th>创建时间</th>
+    	</tr>
+
+    	<% @jobs.each do |job| %>
+    	<tbody>
+    		<tr>
+    			<td><%= link_to(job.title, admin_job_path(job))%></td>
+    			<td>
+    				<%= link_to("编辑", edit_admin_job_path(job))%>
+    				<%= link_to("删除", admin_job_path(job), :method => :delete, :data => { :confirm => "确定删除吗?"} ) %>
+    			</td>
+    			<td><%= job.created_at %></td>
+    		</tr>
+    	</tbody>
+        <% end %>
+    </thead>
+  	
+  </table>
+	
+</div>
